@@ -379,8 +379,8 @@ def scala_proto_repositories(
 
     native.maven_jar(
         name = "scala_proto_rules_opencensus_api",
-        artifact = "io.opencensus:opencensus-api:0.18.0",
-        sha1 = "b89a8f8dfd1e1e0d68d83c82a855624814b19a6e",
+        artifact = "io.opencensus:opencensus-api:0.19.2",
+        sha1 = "5c052b432727b1da381b52e263cbcb7463c43378",
         server = "scala_proto_deps_maven_server",
     )
 
@@ -390,9 +390,33 @@ def scala_proto_repositories(
     )
 
     native.maven_jar(
+        name = "scala_proto_rules_opencensus_impl",
+        artifact = "io.opencensus:opencensus-impl:0.19.2",
+        sha1 = "4f91c495dc9584effebb6e703cdf8a686646681d",
+        server = "scala_proto_deps_maven_server",
+    )
+
+    native.bind(
+        name = "io_bazel_rules_scala/dependency/proto/opencensus_impl",
+        actual = "@scala_proto_rules_opencensus_impl//jar",
+    )
+
+    native.maven_jar(
+        name = "scala_proto_rules_opencensus_impl_core",
+        artifact = "io.opencensus:opencensus-impl-core:0.19.2",
+        sha1 = "d420200277f03b3dd9cb44eadd330c5a7ff62fd2",
+        server = "scala_proto_deps_maven_server",
+    )
+
+    native.bind(
+        name = "io_bazel_rules_scala/dependency/proto/opencensus_impl_core",
+        actual = "@scala_proto_rules_opencensus_impl_core//jar",
+    )
+
+    native.maven_jar(
         name = "scala_proto_rules_opencensus_contrib_grpc_metrics",
-        artifact = "io.opencensus:opencensus-contrib-grpc-metrics:0.18.0",
-        sha1 = "8e90fab2930b6a0e67dab48911b9c936470d43dd",
+        artifact = "io.opencensus:opencensus-contrib-grpc-metrics:0.19.2",
+        # sha1 = "8e90fab2930b6a0e67dab48911b9c936470d43dd",
     )
 
     native.bind(
@@ -518,6 +542,8 @@ GRPC_DEPS = [
     "//external:io_bazel_rules_scala/dependency/proto/grpc_context",
     "//external:io_bazel_rules_scala/dependency/proto/guava",
     "//external:io_bazel_rules_scala/dependency/proto/opencensus_api",
+    "//external:io_bazel_rules_scala/dependency/proto/opencensus_impl",
+    "//external:io_bazel_rules_scala/dependency/proto/opencensus_impl_core",
     "//external:io_bazel_rules_scala/dependency/proto/opencensus_contrib_grpc_metrics",
     "//external:io_bazel_rules_scala/dependency/proto/google_instrumentation",
     "//external:io_bazel_rules_scala/dependency/proto/netty_codec",
