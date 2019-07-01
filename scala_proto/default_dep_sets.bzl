@@ -28,6 +28,7 @@ DEFAULT_SCALAPB_GRPC_DEPS = [
     "//external:io_bazel_rules_scala/dependency/proto/disruptor",
     "//external:io_bazel_rules_scala/dependency/proto/opencensus_impl_core",
     "//external:io_bazel_rules_scala/dependency/proto/opencensus_contrib_grpc_metrics",
+    "//external:io_bazel_rules_scala/dependency/proto/google_instrumentation",
     "//external:io_bazel_rules_scala/dependency/proto/netty_codec",
     "//external:io_bazel_rules_scala/dependency/proto/netty_codec_http",
     "//external:io_bazel_rules_scala/dependency/proto/netty_codec_http2",

@@ -226,6 +226,19 @@ def scala_proto_default_repositories(
     )
 
     _scala_maven_import_external(
+        name = "scala_proto_rules_google_instrumentation",
+        artifact = "com.google.instrumentation:instrumentation-api:0.3.0",
+        jar_sha256 = "671f7147487877f606af2c7e39399c8d178c492982827305d3b1c7f5b04f1145",
+        licenses = ["notice"],
+        server_urls = maven_servers,
+    )
+
+    native.bind(
+        name = "io_bazel_rules_scala/dependency/proto/google_instrumentation",
+        actual = "@scala_proto_rules_google_instrumentation//jar",
+    )
+
+    _scala_maven_import_external(
         name = "scala_proto_rules_netty_codec",
         artifact = "io.netty:netty-codec:4.1.34.Final",
         jar_sha256 = "dbd6cea7d7bf5a2604e87337cb67c9468730d599be56511ed0979aacb309f879",
