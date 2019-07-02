@@ -16,12 +16,12 @@ def scala_proto_default_repositories(
 
     scala_jar_shas = {
         "2.11": {
-            "scalapb_plugin": "b67e563d06f1bbb6ea704a063760a85ec7fb5809828402364d5418dd1c5cab06",
+            "scalapb_plugin": "936fb61e53b502d429273735ec294faee1e716c2648ff0dbbf6fb2260af0539a",
             "protoc_bridge": "e94cf50d9ba4b3d5f4b491cb9483b4da566afe24d0fa809a003263b4b50ff269",
-            "scalapbc": "120b7d7f42051da3406b72480eeb331a985a99b2a3c999243fc3c11e6b7530b2",
-            "scalapb_runtime": "40f93a9ec5ea4dc21e1fa4fb4088cf76768dd3c0137c3fa6683ae0d9a17f5d44",
-            "scalapb_runtime_grpc": "93a9f5f1c64ef83aacc2e46c9c09f3156f59d979b5b5565eac9437897882c465",
-            "scalapb_lenses": "bacdee7d8b6fa7a822a3ec55d12a15896d54fe2e4f22bbd8a5194e9bba751193",
+            "scalapbc": "b4208edca06f32d47f24b2d89a759127a162ac9e29a4b98dfa6d9a105b27380d",
+            "scalapb_runtime": "ab1e449a18a9ce411eb3fec31bdbca5dd5fae4475b1557bb5e235a7b54738757",
+            "scalapb_runtime_grpc": "0170ad41fa95f2f5e8318f1c69edafd731467386280b07adce3dc2027f788f33",
+            "scalapb_lenses": "f4809760edee6abc97a7fe9b7fd6ae5fe1006795b1dc3963ab4e317a72f1a385",
             "scalapb_fastparse": "1b6d9fc75ca8a62abe0dd7a71e62aa445f2d3198c86aab5088e1f90a96ade30b",
         },
         "2.12": {
@@ -40,7 +40,7 @@ def scala_proto_default_repositories(
     _scala_maven_import_external(
         name = "scala_proto_rules_scalapb_plugin",
         artifact = _scala_mvn_artifact(
-            "com.thesamet.scalapb:compilerplugin:0.8.4",
+            "com.thesamet.scalapb:compilerplugin:0.9.0",
             major_version,
         ),
         jar_sha256 = scala_version_jar_shas["scalapb_plugin"],
@@ -72,7 +72,7 @@ def scala_proto_default_repositories(
     _scala_maven_import_external(
         name = "scala_proto_rules_scalapbc",
         artifact = _scala_mvn_artifact(
-            "com.thesamet.scalapb:scalapbc:0.8.4",
+            "com.thesamet.scalapb:scalapbc:0.9.0",
             major_version,
         ),
         jar_sha256 = scala_version_jar_shas["scalapbc"],
@@ -87,7 +87,7 @@ def scala_proto_default_repositories(
     _scala_maven_import_external(
         name = "scala_proto_rules_scalapb_runtime",
         artifact = _scala_mvn_artifact(
-            "com.thesamet.scalapb:scalapb-runtime:0.8.4",
+            "com.thesamet.scalapb:scalapb-runtime:0.9.0",
             major_version,
         ),
         jar_sha256 = scala_version_jar_shas["scalapb_runtime"],
@@ -102,7 +102,7 @@ def scala_proto_default_repositories(
     _scala_maven_import_external(
         name = "scala_proto_rules_scalapb_runtime_grpc",
         artifact = _scala_mvn_artifact(
-            "com.thesamet.scalapb:scalapb-runtime-grpc:0.8.4",
+            "com.thesamet.scalapb:scalapb-runtime-grpc:0.9.0",
             major_version,
         ),
         jar_sha256 = scala_version_jar_shas["scalapb_runtime_grpc"],
@@ -117,7 +117,7 @@ def scala_proto_default_repositories(
     _scala_maven_import_external(
         name = "scala_proto_rules_scalapb_lenses",
         artifact = _scala_mvn_artifact(
-            "com.thesamet.scalapb:lenses:0.8.4",
+            "com.thesamet.scalapb:lenses:0.9.0",
             major_version,
         ),
         jar_sha256 = scala_version_jar_shas["scalapb_lenses"],
